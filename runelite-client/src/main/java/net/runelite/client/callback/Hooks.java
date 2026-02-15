@@ -401,12 +401,13 @@ public class Hooks implements Callbacks
 		// Draw clientUI overlays
 		clientUi.paintOverlays(graphics2d);
 
-		if (client.isGpu())
-		{
-			// processDrawComplete gets called on GPU by the gpu plugin at the end of its
-			// drawing cycle, which is later on.
-			return;
-		}
+		// Test - Don't return here with gpu plugin enabled
+		// if (client.isGpu())
+		// {
+		// 	// processDrawComplete gets called on GPU by the gpu plugin at the end of its
+		// 	// drawing cycle, which is later on.
+		// 	return;
+		// }
 
 		// Stretch the game image if the user has that enabled
 		Image image = mainBufferProvider.getImage();
